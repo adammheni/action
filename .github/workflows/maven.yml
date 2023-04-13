@@ -28,9 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: |
-        cd id
-        mvn clean install
+      run: mvn clean install
     
     - name: Build & push Docker image
      
