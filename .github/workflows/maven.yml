@@ -32,13 +32,14 @@ jobs:
         cd id
         mvn clean install
     
-    - name: Build Docker image
-      uses: docker/build-push-action@v2
+    - name: Build & push Docker image
+     
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        context: id
-        file: Dockerfile
-        push: true
-        tags: adammheni/test:latest
+        image: adammheni/test
+        tags: latest
+        registry: docker.io
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
