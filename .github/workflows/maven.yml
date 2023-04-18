@@ -34,13 +34,7 @@ jobs:
       env:     
         SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      with:
-        sonarqube-url: http://172.16.98.130:31158/sonar
-        scanner-version: 4.6.2
-        login: ${{ secrets.SONARQUBE_LOGIN }}
-        password: ${{ secrets.SONARQUBE_PASSWORD }}
-        options: -Dsonar.projectKey=your-project-key -Dsonar.projectName=your-project-name -Dsonar.projectVersion=1.0 -Dsonar.sources=src -Dsonar.language=java -Dsonar.java.binaries=target
-
+    
 
     - name: Build & push Docker image
      
