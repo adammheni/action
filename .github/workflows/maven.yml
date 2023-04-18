@@ -24,9 +24,9 @@ jobs:
 
     - name: Setup kubectl
       uses: azure/setup-kubectl@v1
-      with:
+      env:
         kubeconfig: ${{ secrets.KUBECONFIG }}
-        version: 'latest'
+        version: '1.26.3'
 
     - name: Check SonarQube service status
       run: kubectl get services -n sonarqube
