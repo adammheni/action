@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Setup kubectl
-      uses: steebchen/kubectl@master
+      uses: steebchen/kubectl@master 
       env:
         kubeconfig: ${{ secrets.KUBECONFIG }}
         version: '1.26.3'
